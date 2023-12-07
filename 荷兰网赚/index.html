@@ -1,0 +1,674 @@
+<html lang="en-US">
+
+<head>
+
+    <link href="images/quote-icon.png" rel="shortcut icon" type="image/x-icon">
+    <style type="text/css">
+        /* Copyright 2014-present Evernote Corporation. All rights reserved. */
+        @keyframes caretBlink {
+            from {
+                opacity: 1.0;
+            }
+
+            to {
+                opacity: 0.0;
+            }
+        }
+
+        @keyframes rotateSpinner {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #en-markup-loading-spinner img {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            animation-name: rotateSpinner;
+            animation-duration: 0.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    </style>
+    <style type="text/css">
+        /* Copyright 2014-present Evernote Corporation. All rights reserved. */
+        #en-markup-alert-container .cell-2 {
+            position: relative;
+            float: left;
+            width: 345px;
+            margin-top: 29px;
+            margin-bottom: 20px;
+        }
+
+        #en-markup-alert-container .cell-2 .cell-2-title {
+            margin-bottom: 5px;
+            padding-right: 30px;
+            font-size: 12pt;
+            font-family: Tahoma, Arial;
+        }
+
+        #en-markup-alert-container .cell-2 .cell-2-message {
+            padding-right: 30px;
+            font-size: 9.5pt;
+            font-family: Tahoma, Arial;
+        }
+
+        #en-markup-alert-container .cell-3 {
+            position: relative;
+            width: 450px;
+            height: 60px;
+            float: left;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #en-markup-alert-container .cell-3 button {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            width: 110px;
+            height: 36px;
+        }
+
+        #en-markup-alert-container .cell-3 button.alt-button {
+            position: absolute;
+            top: 12px;
+            right: 140px;
+            width: 110px;
+            height: 36px;
+        }
+
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact input[type="tel"],
+        #contact input[type="url"],
+        #contact textarea,
+        #contact button[type="submit"] {
+            font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+        }
+
+        #contact {
+            background: #F9F9F9;
+            padding: 25px;
+            margin: 150px 0;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        #contact h3 {
+            display: block;
+            font-size: 30px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        #contact h4 {
+            margin: 5px 0 15px;
+            display: block;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        fieldset {
+            border: medium none !important;
+            margin: 0 0 10px;
+            min-width: 100%;
+            padding: 0;
+            width: 100%;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact input[type="tel"],
+        #contact input[type="url"],
+        #contact textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            background: #FFF;
+            margin: 0 0 5px;
+            padding: 10px;
+        }
+
+        #contact input[type="text"]:hover,
+        #contact input[type="email"]:hover,
+        #contact input[type="tel"]:hover,
+        #contact input[type="url"]:hover,
+        #contact textarea:hover {
+            -webkit-transition: border-color 0.3s ease-in-out;
+            -moz-transition: border-color 0.3s ease-in-out;
+            transition: border-color 0.3s ease-in-out;
+            border: 1px solid #aaa;
+        }
+
+        #contact textarea {
+            height: 100px;
+            max-width: 100%;
+            resize: none;
+        }
+
+        #contact button[type="submit"] {
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            background: #4CAF50;
+            color: #FFF;
+            margin: 0 0 5px;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        #contact button[type="submit"]:hover {
+            background: #43A047;
+            -webkit-transition: background 0.3s ease-in-out;
+            -moz-transition: background 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #contact button[type="submit"]:active {
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        #contact input:focus,
+        #contact textarea:focus {
+            outline: 0;
+            border: 1px solid #aaa;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #888;
+        }
+
+        :-moz-placeholder {
+            color: #888;
+        }
+
+        ::-moz-placeholder {
+            color: #888;
+        }
+
+        :-ms-input-placeholder {
+            color: #888;
+        }
+    </style>
+    <script charset="UTF-8" src="js/js-sdk-pro.min_1.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="css/animate.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/super-classes.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/mobile.css" rel="stylesheet">
+    <title>Home | 2023 Online Part-time Assistant Recruitment</title>
+    <style type="text/css">
+        @font-face {
+            font-family: "element-icons";
+            src: url('chrome-extension://bbakhnmfkjenfbhjdddipcefnhpikjbj/fonts/element-icons.woff') format('woff'),
+                url('chrome-extension://bbakhnmfkjenfbhjdddipcefnhpikjbj/fonts/element-icons.ttf ') format('truetype');
+            /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!---header-and-banner-section-->
+    <div class="header-and-banner-con w-100 overflow" onclick="jump()">
+        <div class="header-and-banner-inner-con">
+            <section class="banner-main-con">
+                <div class="container">
+                    <!--banner-start-->
+                    <div class="banner-con text-md-left text-center">
+                        <div class="row">
+                            <div
+                                class="col-lg-5 col-md-6 d-flex justify-content-center flex-column banner-main-left-con order-md-0 order-2">
+                                <div class="banner-left-con wow slideInLeft"
+                                    style="visibility: visible; animation-name: slideInLeft;">
+                                    <h1>توظيف
+                                    </h1>
+                                    <p style="color:#000000;font-size:20px">توظيف المسوقين عبر الإنترنت                                        <br>
+                                        ✔️  1. يمكن أن يعمل بدوام كامل أو جزئي، فوق 25 سنة<br>
+                                        ✔️  2. العمل بسيط، يمكنك العمل على هاتفك المحمول أو الكمبيوتر لمدة ساعة واحدة كل يوم<br>
+                                        ✔️  3. تشغيل 50 موظفاً ودفع الأجور يومياً.<br>
+                                        ✔️  4. يوميا 30 دينار - 240 دينار<br>
+                                     <br>
+                                     تعال واعمل معنا، فنحن نحب أن نسمع منك!
+                                         </p>
+                                    <div class="get-started">
+                                        <a class="jump" onclick="jump()" style="color:#ffffff;font-size:20px">يأخذ
+                                            اتصل بنا - Whatsapp</a>
+                                    </div>
+                                    <!-- <span class="d-block">01<small>.</small></span> -->
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 d-flex justify-content-lg-end justify-content-center pr-lg-0">
+                                <div class="banner-right-con position-relative wow slideInRight"
+                                    style="visibility: visible; animation-name: slideInRight;">
+                                    <figure class="mb-0">
+                                        <img alt="banner-right-img" src="images/banner-right-img.png">
+                                    </figure>
+                                    <div class="banner-img-detail wow bounceInUp" data-wow-delay="300ms"
+                                        data-wow-duration="0.8s"
+                                        style="visibility: visible; animation-duration: 0.8s; animation-delay: 300ms; animation-name: bounceInUp;">
+                                        <h3 class="mb-0">يوميا 30 دينار - 240 دينار
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--banner-end-->
+                </div>
+            </section>
+        </div>
+    </div>
+    <!---header-and-banner-section-->
+    <!-- sloution box -->
+    <section class="w-100 float-left sloution-box-con padding-top padding-bottom overflow">
+        <div class="container" onclick="jump()">
+            <div class="sloution-box-content text-md-left text-center">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="sloution-box-lft-content wow slideInLeft"
+                            style="visibility: visible; animation-name: slideInLeft;">
+                            <figure class="mb-0">
+                                <img alt="sloution-box-lft-img" src="images/sloution-box-lft-img.png">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                        <div class="sloution-box-right-content wow slideInRight"
+                            style="visibility: visible; animation-name: slideInRight;">
+                            <figure>
+                                <img alt="sloution-box-right-img" class="img-fluid"
+                                    src="images/sloution-box-right-img.png">
+                            </figure>
+                            <h2>نحن نقدم العمل بدوام جزئي الذي يناسبك بشكل أفضل</h2>
+                            <p class="col-lg-11 pl-0" style="color:#000000;font-size:20px">نحن نقدم واحدة أكثر راحة
+                                طريقة لكسب المال <br>
+                                سواء كان هدفك هو بناء مصدر دخل سلبي كامل أو مجرد...
+                                لكسب بعض الدخل الإضافي، هناك الكثير من الفرص هذه الأيام. بالصبر واحد
+                                يمكن لأخلاقيات العمل القوية والتصميم أن تجعل أي شخص يكسب دخلاً إضافيًا من المنزل
+                                كسب، حتى مع القليل من الخبرة.</p>
+                            <div class="generic">
+                                <a class="jump" onclick="jump()" style="font-size:20px">اتصل بنا -
+                                    WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- sloution box -->
+    <!-- service section -->
+    <section class="w-100 float-left service-con padding-bottom">
+        <div class="container" onclick="jump()">
+            <div class="service-inner-con position-relative dotted-img">
+                <div class="genric-heading text-center">
+                    <h1 class="position-relative">التعاون معنا</h1>
+                    <p class="mb-0" style="color:#000000;font-size:20px">عمل بسيط، وأجر عظيم!</p>
+                </div>
+                <div class="service-box wow fadeInUp" style="visibility: visible;">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="service-box-item position-relative">
+                                <figure>
+                                    <img alt="service-icon1" class="img-fluid" src="images/service-icon1.png">
+                                </figure>
+                                <h3>تنمية عملك </h3>
+                                <p style="color:#000000;font-size:20px">يمكن أن يكون الهاتف مصدر دخلك</p>
+                                <a class="jump" onclick="jump()" target="_blank">كسب المزيد<span
+                                        class="fas fa-arrow-right"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="service-box-item position-relative">
+                                <figure>
+                                    <img alt="service-icon1" class="img-fluid" src="images/service-icon2.png">
+                                </figure>
+                                <h3>دخل إضافي سهل</h3>
+                                <p style="color:#000000;font-size:20px">استخدم وقت فراغك لكسب 100-250 دولارًا بسهولة
+                                    يورو لكسب يوميا</p>
+                                <a class="jump" onclick="jump()" target="_blank">كسب المزيد <span
+                                        class="fas fa-arrow-right"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="service-box-item position-relative">
+                                <figure>
+                                    <img alt="service-icon1" class="img-fluid" src="images/service-icon3.png">
+                                </figure>
+                                <h3>دائما، في كل مكان </h3>
+                                <p style="color:#000000;font-size:20px">أعد تعريف الطريقة التي تعمل بها</p>
+                                <a class="jump" onclick="jump()" target="_blank">كسب المزيد <span
+                                        class="fas fa-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- service section -->
+    <!-- help section -->
+    <section class="w-100 float-left padding-top padding-bottom help-con overflow">
+        <div class="container" onclick="jump()">
+            <div class="help-box-content">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="sloution-box-lft-content position-relative help-left-con wow slideInLeft"
+                            style="visibility: visible;">
+                            <div class="client-details-box like-con">
+                                <figure>
+                                    <img alt="like-icon" class="img-fluid" src="images/like-icon.png">
+                                </figure>
+                                <p>إعجابات غير محدودة </p>
+                            </div>
+                            <div class="client-details-box designer-con">
+                                <p>عميل</p>
+                                <figure class="mb-0 d-inline-block">
+                                    <img alt="designer-img" class="img-fluid" src="images/designer-img.png">
+                                </figure>
+                                <span>/15</span>
+                            </div>
+                            <figure class="mb-0">
+                                <img alt="help-left-img" src="images/help-left-img.png">
+                            </figure>
+                            <div class="client-details-box commetns-con">
+                                <figure>
+                                    <img alt="commetns-img" class="img-fluid" src="images/commetns-img.png">
+                                </figure>
+                                <p>15K+ تعليقات</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                        <div class="sloution-box-right-content help-right-con wow slideInRight"
+                            style="visibility: visible;">
+                            <figure>
+                                <img alt="help-right-icon" class="img-fluid" src="images/help-right-icon.png">
+                            </figure>
+                            <h2>فائدة<span class="position-relative"></span></h2>
+                            <p class="col-lg-10 pl-0 pr-0" style="color:#000000;font-size:20px">هناك العديد من الفوائد للعمل من المنزل
+                                مزايا. يمنحك الحرية في اختيار ساعات العمل الخاصة بك ويسمح لك...
+                                تقرر المبلغ الذي تحصل عليه. يمكنك أيضًا الحصول على مهنة مريحة
+                                للعمل مقابل راتب مرتفع.</p>
+                            <!-- <p class="col-lg-10 pl-0 pr-0">Vivamus elementum semper nisi. Aenean vulputate eleif end tellus.
+                        </p> -->
+                            <div class="generic">
+                                <a class="jump" onclick="jump()" style="font-size:20px">اتصل بنا -
+                                    WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-100 float-left service-con padding-bottom padding-top information-con">
+        <div class="container" onclick="jump()">
+            <div class="service-inner-con position-relative information-inner-con dotted-img">
+                <div class="genric-heading text-center">
+                    <h2 class="position-relative">تعال وانضم لنا! </h2>
+                    <p class="mb-0" style="color:#000000;font-size:20px">لديك ميزة اختيار إضافية. يمكنك أنت
+                        اختر مشاريعك وعملائك. يمكنك العمل بالسرعة التي تناسبك.</p>
+                </div>
+                <div class="generic" style="text-align: center;">
+                    <a class="jump" onclick="jump()" style="font-size:20px" target="_blank">اتصل بنا -
+                        WhatsApp </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="w-100 float-left padding-top padding-bottom tastimonials-con position-relative overflow"
+        id="testimonials">
+        <div class="container" onclick="jump()">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="tastimonials-left-con position-relative wow slideInLeft" style="visibility: visible;">
+                        <figure class="mb-0">
+                            <img alt="tastimonials-img" class="img-fluid" src="images/tastimonials-img.png">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="carousel slide wow slideInRight" data-ride="carousel" id="carouselExampleControls"
+                        style="visibility: visible;">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonials-content">
+                                    <figure>
+                                        <img alt="quote-icon" class="img-fluid" src="images/quote-icon.png">
+                                    </figure>
+                                    <h2>موثوق بها لدينا
+                                        <span>klanten</span>
+                                    </h2>
+                                    <div class="testimonials-inner-content">
+                                        <p class="col-lg-11 pl-0">لا أكسب الآن دخلاً بدوام كامل فحسب، بل...
+                                            إنها فكرة جيدة أيضًا! منصة موثوقة حيث يمكنني كسب المال في أي وقت
+                                            يمكن أن تسجل.</p>
+                                        <h4 class="d-block auther-name">كريستينا مو</h4>
+                                        <!-- <span class="d-block">CEO - Company</span> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonials-content">
+                                    <figure>
+                                        <img alt="quote-icon" class="img-fluid" src="images/quote-icon.png">
+                                    </figure>
+                                    <h2>موثوق بها لدينا
+                                        <span>عملاء</span>
+                                    </h2>
+                                    <div class="testimonials-inner-content">
+                                        <p class="col-lg-11 pl-0">إنها منصة آمنة لكسب دخل إضافي
+                                            ليستحق! أستغل وقت فراغي في القيام ببعض الأعمال وكسب المزيد
+                                            من 4000 روبية يوميا.</p>
+                                        <h4 class="d-block auther-name">سامانثا هاربر</h4>
+                                        <!-- <span class="d-block">CEO - Company</span> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonials-content">
+                                    <figure>
+                                        <img alt="quote-icon" class="img-fluid" src="images/quote-icon.png">
+                                    </figure>
+                                    <h2>موثوق بها لدينا
+                                        <span>عملاء</span>
+                                    </h2>
+                                    <div class="testimonials-inner-content">
+                                        <p class="col-lg-11 pl-0">أنا أستخدم هاتفي فقط لهذه الوظيفة و
+                                            المهمة بسيطة! الآن يمكنني أن أكسب ما بين 100 إلى 250 دولارًا يوميًا.</p>
+                                        <h4 class="d-block auther-name">Susie</h4>
+                                        <!-- <span class="d-block">CEO - Company</span> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" data-slide="prev" role="button" target="_blank">
+                            <span class="fas fa-arrow-left d-flex align-items-center justify-content-center"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" data-slide="next" role="button" target="_blank">
+                            <span class="fas fa-arrow-right d-flex align-items-center justify-content-center"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-100 float-left weight-footer-con">
+        <div class="container">
+            <div class="row wow fadeInUp" style="visibility: visible;">
+                <div class="col-lg-4 col-12">
+
+                </div>
+            </div>
+            <!-- form -->
+            <!-- <div class="container2">
+                <form id="contact" action="https://formsubmit.co/annafedorova626@gmail.com" method="POST">
+                    <h3>اتصل بنا </h3>
+                    <fieldset>
+                        <input placeholder="Naam" name="name" type="text" required>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Email Address" name="email" type="email" required>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Whatsapp Number" name="whatsapp" type="tel" required>
+                    </fieldset>
+                    <fieldset>
+                        <textarea placeholder="Bericht...." name="message" required></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <button name="submit" type="submit" id="contact-submit">Indienen</button>
+                    </fieldset>
+                </form>
+            </div> -->
+            <div class="footer-navbar wow fadeInUp" onclick="jump()" style="visibility: visible;">
+                <span style="color: white">Copyright © 2023 </span><br>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div aria-hidden="true" class="modal fade" id="work-portfolio-model-1" onclick="jump()" style="display: none;"
+        tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true"><span class="far fa-times"></span></span></button>
+                </div>
+                <div class="modal-body service-model-content">
+                    <figure class="mb-0">
+                        <img alt="work-portfolio-img" class="img-fluid" src="images/work-portfolio-img1.png">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <div aria-hidden="true" class="modal fade" id="work-portfolio-model-2" onclick="jump()" style="display: none;"
+        tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true"><span class="far fa-times"></span></span></button>
+                </div>
+                <div class="modal-body service-model-content">
+                    <figure class="mb-0">
+                        <img alt="work-portfolio-img" class="img-fluid" src="images/work-portfolio-img2.png">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <div aria-hidden="true" class="modal fade" id="work-portfolio-model-3" onclick="jump()" style="display: none;"
+        tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true"><span class="far fa-times"></span></span></button>
+                </div>
+                <div class="modal-body service-model-content">
+                    <figure class="mb-0">
+                        <img alt="work-portfolio-img" class="img-fluid" src="images/work-portfolio-img3.png">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <div aria-hidden="true" class="modal fade" id="work-portfolio-model-4" style="display: none;" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true"><span class="far fa-times"></span></span></button>
+                </div>
+                <div class="modal-body service-model-content">
+                    <figure class="mb-0">
+                        <img alt="work-portfolio-img" class="img-fluid" src="images/work-portfolio-img4.png">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="jump" onclick="jump()" target="_blank">
+        <img alt="" src="images/whatsapp.gif" style="    width: 75px;
+			height: 75px;
+			position: fixed;
+			right: 5px;
+			top: 85%;
+			transform: translateY(-50%);
+			z-index: 99999;">
+    </a>
+    <div class="bottom-float" style="height: 80px;
+	color: #ffffff;
+	background: #ffffff;
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	right: 0;
+	left: 0;
+	text-align: center;
+	font-weight: 600;
+	padding: 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 18px;">
+        <button
+            style="width: 350px;background-color:#03b877;border:#03b877;border-radius:40px;height: 50px;margin-top:5px;border: #03b877;color: #ffffff;font-size: 25px;">
+            <a class="jump" onclick="jump()" target="_blank">
+                <strong style="color: white;">اتصل بنا - Whatsapp</strong>
+            </a>
+        </button>
+    </div>
+    <!--  -->
+    <script src="js/wow.js"></script>
+    <script>
+        function jump() {
+            window.location.href = 'https://www.fbtoufang3.life/q/BB002';
+
+        }
+    </script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script charset="utf-8" id="LA_COLLECT" src="js/js-sdk-pro.min_1_1.js"></script>
+
+    <script charset="UTF-8" id="LA_COLLECT" src="js/js-sdk-pro.min.js"></script>
+    <script>LA.init({ id: "K7PAzhU1c6pHLAxc", ck: "K7PAzhU1c6pHLAxc" })</script>
+</body>
+
+</html>
